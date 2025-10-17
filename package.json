@@ -19,11 +19,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/vue-form-manager.git"
+    "url": "https://github.com/TheOluwafemi/vue-form-manager.git"
   },
-  "homepage": "https://github.com/yourusername/vue-form-manager#readme",
+  "homepage": "https://github.com/TheOluwafemi/vue-form-manager#readme",
   "bugs": {
-    "url": "https://github.com/yourusername/vue-form-manager/issues"
+    "url": "https://github.com/TheOluwafemi/vue-form-manager/issues"
   },
   "scripts": {
     "build": "tsc",

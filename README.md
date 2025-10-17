@@ -2,8 +2,8 @@
 
 [![npm version](https://badge.fury.io/js/vue-form-manager.svg)](https://badge.fury.io/js/vue-form-manager)
 [![npm downloads](https://img.shields.io/npm/dm/vue-form-manager.svg)](https://www.npmjs.com/package/vue-form-manager)
-[![GitHub license](https://img.shields.io/github/license/yourusername/vue-form-manager.svg)](https://github.com/yourusername/vue-form-manager/blob/main/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/vue-form-manager.svg)](https://github.com/yourusername/vue-form-manager/stargazers)
+[![GitHub license](https://img.shields.io/github/license/TheOluwafemi/vue-form-manager.svg)](https://github.com/TheOluwafemi/vue-form-manager/blob/main/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/TheOluwafemi/vue-form-manager.svg)](https://github.com/TheOluwafemi/vue-form-manager/stargazers)
 
 A powerful, declarative form validation library for Vue 3 that abstracts away Zod complexity while providing enterprise-grade validation capabilities.
 
@@ -333,4 +333,4 @@ MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## ⭐ Show Your Support
 
-If this project helped you, please consider giving it a ⭐ on [GitHub](https://github.com/yourusername/vue-form-manager)!
+If this project helped you, please consider giving it a ⭐ on [GitHub](https://github.com/TheOluwafemi/vue-form-manager)!
