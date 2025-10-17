@@ -22,8 +22,8 @@
 </template>
 
 <script setup lang="ts">
-import BasicUsage from './components/BasicUsage.vue';
-import ComprehensiveExample from './components/ComprehensiveExample.vue';
+import BasicUsage from '../src/demo/components/BasicUsage.vue'
+import ComprehensiveExample from '../'
 </script>
 
 <style scoped>

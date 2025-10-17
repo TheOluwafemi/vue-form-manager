@@ -123,7 +123,7 @@
 </template>
 
 <script setup lang="ts">
-import { useForm, createSchema, type FieldConfig } from '../index'
+import { useForm, createSchema, type FieldConfig } from '../../index'
 
 // Define form schema
 const schemaConfig: Record<string, FieldConfig> = {

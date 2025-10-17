@@ -513,7 +513,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { useForm, createSchema, type FieldConfig } from '../index'
+import { useForm, createSchema, type FieldConfig } from '../../index'
 
 // Form schema configuration showcasing all field types
 const schemaConfig: Record<string, FieldConfig> = {
