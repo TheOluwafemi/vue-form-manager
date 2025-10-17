@@ -65,6 +65,7 @@ jspm_packages/
 
 # Rollup.js default build output
 dist/
+dist-demo/
 
 # Uncomment the public line in if the project has a public folder
 # public

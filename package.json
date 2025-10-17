@@ -27,7 +27,9 @@
   },
   "scripts": {
     "build": "tsc",
+    "build:demo": "vite build --config vite.demo.config.ts",
     "dev": "tsc --watch",
+    "dev:demo": "vite --config vite.demo.config.ts",
     "preview": "vite",
     "preview:build": "vite build",
     "examples": "open src/demo/standalone-example.html",
