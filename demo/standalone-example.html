@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Vue Form Manager - Basic Example</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+
+      .form-container {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .field-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #333;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #ddd;
+        border-radius: 6px;
+        font-size: 16px;
+        transition: border-color 0.2s;
+        box-sizing: border-box;
+      }
+
+      input:focus,
+      select:focus {
+        outline: none;
+        border-color: #007bff;
+      }
+
+      input.error,
+      select.error {
+        border-color: #dc3545;
+      }
+
+      .error-message {
+        color: #dc3545;
+        font-size: 14px;
+        margin-top: 4px;
+      }
+
+      .form-actions {
+        display: flex;
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .btn {
+        padding: 12px 24px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      .btn-primary {
+        background-color: #007bff;
+        color: white;
+      }
+
+      .btn-primary:hover:not(:disabled) {
+        background-color: #0056b3;
+      }
+
+      .btn-primary:disabled {
+        background-color: #6c757d;
+        cursor: not-allowed;
+      }
+
+      .btn-secondary {
+        background-color: #6c757d;
+        color: white;
+      }
+
+      .btn-secondary:hover {
+        background-color: #545b62;
+      }
+
+      .status {
+        margin-top: 20px;
+        padding: 12px;
+        border-radius: 6px;
+        font-size: 14px;
+      }
+
+      .status.success {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+      }
+
+      .status.error {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+      }
+
+      .debug-info {
+        margin-top: 20px;
+        padding: 16px;
+        background-color: #f8f9fa;
+        border-radius: 6px;
+        border-left: 4px solid #007bff;
+      }
+
+      .debug-info pre {
+        margin: 0;
+        font-size: 12px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="form-container">
+        <h1>🚀 Vue Form Manager Example</h1>
+        <p>
+          This example demonstrates the core functionality of Vue Form Manager
+        </p>
+
+        <form @submit.prevent="handleSubmit">
+          <!-- Name Field -->
+          <div class="field-group">
+            <label for="name">Name *</label>
+            <input
+              id="name"
+              v-model="formData.name"
+              @input="handleFieldChange('name')"
+              @blur="validateSingleField('name')"
+              type="text"
+              :class="{ error: errors.name }"
+              placeholder="Enter your name" />
+            <div
+              v-if="errors.name"
+              class="error-message">
+              {{ errors.name }}
+            </div>
+          </div>
+
+          <!-- Email Field -->
+          <div class="field-group">
+            <label for="email">Email *</label>
+            <input
+              id="email"
+              v-model="formData.email"
+              @input="handleFieldChange('email')"
+              @blur="validateSingleField('email')"
+              type="email"
+              :class="{ error: errors.email }"
+              placeholder="Enter your email" />
+            <div
+              v-if="errors.email"
+              class="error-message">
+              {{ errors.email }}
+            </div>
+          </div>
+
+          <!-- Age Field -->
+          <div class="field-group">
+            <label for="age">Age</label>
+            <input
+              id="age"
+              v-model.number="formData.age"
+              @input="handleFieldChange('age')"
+              @blur="validateSingleField('age')"
+              type="number"
+              :class="{ error: errors.age }"
+              placeholder="Enter your age" />
+            <div
+              v-if="errors.age"
+              class="error-message">
+              {{ errors.age }}
+            </div>
+          </div>
+
+          <!-- Role Field -->
+          <div class="field-group">
+            <label for="role">Role *</label>
+            <select
+              id="role"
+              v-model="formData.role"
+              @change="handleFieldChange('role')"
+              @blur="validateSingleField('role')"
+              :class="{ error: errors.role }">
+              <option value="">Select a role</option>
+              <option value="admin">Admin</option>
+              <option value="user">User</option>
+              <option value="moderator">Moderator</option>
+            </select>
+            <div
+              v-if="errors.role"
+              class="error-message">
+              {{ errors.role }}
+            </div>
+          </div>
+
+          <!-- Form Actions -->
+          <div class="form-actions">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              :disabled="isSubmitting || hasErrors">
+              {{ isSubmitting ? 'Submitting...' : 'Submit' }}
+            </button>
+
+            <button
+              type="button"
+              @click="resetForm"
+              class="btn btn-secondary">
+              Reset
+            </button>
+          </div>
+
+          <!-- Status Messages -->
+          <div
+            v-if="submitMessage"
+            class="status"
+            :class="submitStatus">
+            {{ submitMessage }}
+          </div>
+        </form>
+
+        <!-- Debug Information -->
+        <div class="debug-info">
+          <h3>Form State (Live Debug)</h3>
+          <p><strong>Has Changes:</strong> {{ hasChanges }}</p>
+          <p><strong>Has Errors:</strong> {{ hasErrors }}</p>
+          <p><strong>Form Data:</strong></p>
+          <pre>{{ JSON.stringify(formData, null, 2) }}</pre>
+          <p><strong>Errors:</strong></p>
+          <pre>{{ JSON.stringify(errors, null, 2) }}</pre>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const { createApp, ref, reactive, computed } = Vue
+
+      // Simple validation functions (simulating the package functionality)
+      const validateEmail = (email) => {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        return re.test(email)
+      }
+
+      const validateRequired = (value) => {
+        return value !== null && value !== undefined && value !== ''
+      }
+
+      const validateMinLength = (value, min) => {
+        return typeof value === 'string' && value.length >= min
+      }
+
+      createApp({
+        setup() {
+          // Form data
+          const formData = reactive({
+            name: 'John Doe', // Pre-filled
+            email: '',
+            age: 25,
+            role: '',
+          })
+
+          // Form errors
+          const errors = reactive({
+            name: '',
+            email: '',
+            age: '',
+            role: '',
+          })
+
+          // Form state
+          const isSubmitting = ref(false)
+          const submitMessage = ref('')
+          const submitStatus = ref('')
+          const touched = reactive({
+            name: false,
+            email: false,
+            age: false,
+            role: false,
+          })
+
+          // Initial values for comparison
+          const initialValues = {
+            name: 'John Doe',
+            email: '',
+            age: 25,
+            role: '',
+          }
+
+          // Computed properties
+          const hasChanges = computed(() => {
+            return Object.keys(formData).some(
+              (key) => formData[key] !== initialValues[key] || touched[key]
+            )
+          })
+
+          const hasErrors = computed(() => {
+            return Object.values(errors).some((error) => error !== '')
+          })
+
+          // Validation functions
+          const validateSingleField = (fieldName) => {
+            errors[fieldName] = ''
+
+            switch (fieldName) {
+              case 'name':
+                if (!validateRequired(formData.name)) {
+                  errors.name = 'Name is required'
+                } else if (!validateMinLength(formData.name, 2)) {
+                  errors.name = 'Name must be at least 2 characters'
+                }
+                break
+
+              case 'email':
+                if (!validateRequired(formData.email)) {
+                  errors.email = 'Email is required'
+                } else if (!validateEmail(formData.email)) {
+                  errors.email = 'Please enter a valid email address'
+                }
+                break
+
+              case 'age':
+                if (formData.age && (formData.age < 0 || formData.age > 150)) {
+                  errors.age = 'Please enter a valid age'
+                }
+                break
+
+              case 'role':
+                if (!validateRequired(formData.role)) {
+                  errors.role = 'Please select a role'
+                }
+                break
+            }
+          }
+
+          const validateAllFields = () => {
+            Object.keys(formData).forEach(validateSingleField)
+            return !hasErrors.value
+          }
+
+          // Event handlers
+          const handleFieldChange = (fieldName) => {
+            touched[fieldName] = true
+            errors[fieldName] = '' // Clear error on input
+            submitMessage.value = '' // Clear submit message
+          }
+
+          const handleSubmit = async () => {
+            // Mark all fields as touched
+            Object.keys(touched).forEach((key) => {
+              touched[key] = true
+            })
+
+            if (!validateAllFields()) {
+              submitMessage.value = 'Please fix the errors above'
+              submitStatus.value = 'error'
+              return
+            }
+
+            isSubmitting.value = true
+            submitMessage.value = ''
+
+            try {
+              // Simulate API call
+              await new Promise((resolve) => setTimeout(resolve, 2000))
+
+              submitMessage.value = '✅ Form submitted successfully!'
+              submitStatus.value = 'success'
+
+              console.log(
+                'Form submitted with data:',
+                JSON.stringify(formData, null, 2)
+              )
+            } catch (error) {
+              submitMessage.value = '❌ Submission failed. Please try again.'
+              submitStatus.value = 'error'
+            } finally {
+              isSubmitting.value = false
+            }
+          }
+
+          const resetForm = () => {
+            Object.assign(formData, initialValues)
+            Object.keys(errors).forEach((key) => {
+              errors[key] = ''
+            })
+            Object.keys(touched).forEach((key) => {
+              touched[key] = false
+            })
+            submitMessage.value = ''
+            isSubmitting.value = false
+          }
+
+          return {
+            formData,
+            errors,
+            isSubmitting,
+            submitMessage,
+            submitStatus,
+            hasChanges,
+            hasErrors,
+            handleFieldChange,
+            validateSingleField,
+            handleSubmit,
+            resetForm,
+          }
+        },
+      }).mount('#app')
+    </script>
+  </body>
+</html>
