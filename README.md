@@ -1,4 +1,4 @@
-# Vue Form Manager 🚀
+# Vue Form Manager 
 
 [![npm version](https://badge.fury.io/js/vue-form-manager.svg)](https://badge.fury.io/js/vue-form-manager)
 [![npm downloads](https://img.shields.io/npm/dm/vue-form-manager.svg)](https://www.npmjs.com/package/vue-form-manager)
@@ -20,9 +20,9 @@ A simple, powerful form validation library for Vue 3 that makes form handling ef
 - [Best Practices](#-best-practices)
 - [Testing](#-testing)
 - [Contributing](#-contributing)
-- [License](#-license)## ✨ 
+- [License](#-license)
 
-## Features
+## ✨ Features
 
 - **🎯 Declarative Schema Definition**: Define validation rules using simple configuration objects
 - **🔷 TypeScript Support**: Full type safety with excellent IntelliSense
