@@ -5,7 +5,7 @@
 [![GitHub license](https://img.shields.io/github/license/TheOluwafemi/vue-form-manager.svg)](https://github.com/TheOluwafemi/vue-form-manager/blob/master/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/TheOluwafemi/vue-form-manager.svg)](https://github.com/TheOluwafemi/vue-form-manager/stargazers)
 
-A powerful, declarative form validation library for Vue 3 that abstracts away Zod complexity while providing enterprise-grade validation capabilities.
+A simple, powerful form validation library for Vue 3 that makes form handling effortless. Define your validation rules in plain JavaScript objects and let the library handle your state and the complex validation logic behind the scenes.
 
 > **Perfect for**: Vue 3 applications that need robust form validation without the complexity of learning Zod schemas directly.
 
@@ -20,7 +20,9 @@ A powerful, declarative form validation library for Vue 3 that abstracts away Zo
 - [Best Practices](#-best-practices)
 - [Testing](#-testing)
 - [Contributing](#-contributing)
-- [License](#-license)## ✨ Features
+- [License](#-license)## ✨ 
+
+## Features
 
 - **🎯 Declarative Schema Definition**: Define validation rules using simple configuration objects
 - **🔷 TypeScript Support**: Full type safety with excellent IntelliSense
@@ -30,6 +32,7 @@ A powerful, declarative form validation library for Vue 3 that abstracts away Zo
 - **📋 Comprehensive Field Types**: Support for all common form field types
 - **✅ Flexible Validation**: Field-level and form-level validation with custom messages
 - **🏭 Production Ready**: Robust error handling and edge case management
+- **⚡ Lightweight**: Powered by Zod under the hood for reliable validation
 
 ## 📦 Installation
 
@@ -333,29 +336,6 @@ const formControls: UseFormReturn = useForm({ schema, initialValues })
 2. **Validation Timing**: Use `@blur` for validation, `@input` for clearing errors
 3. **TypeScript**: Type your configurations for better development experience
 4. **Form Organization**: Group related fields logically
-
-## 🧪 Testing
-
-This library comes with comprehensive test coverage (51 passing tests):
-
-```bash
-# Run tests
-npm test
-
-# Run tests with UI
-npm run test:ui
-
-# Run tests once
-npm run test:run
-```
-
-**Test Coverage:**
-
-- ✅ All field types (string, email, number, boolean, date, url, enum, array, object)
-- ✅ Validation rules (required, min/max, custom messages)
-- ✅ Form state management (touched, errors, changes)
-- ✅ Real-world integration scenarios
-- ✅ Edge cases and error handling
 
 ## 🤝 Contributing
 
