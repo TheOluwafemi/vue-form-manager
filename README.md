@@ -48,7 +48,7 @@ pnpm add vue-form-manager
 ### Requirements
 
 - Vue 3.x
-- Node.js ≥ 16.0.0
+- Node.js ≥ 20.0.0
 
 ## 🚀 Quick Start
 

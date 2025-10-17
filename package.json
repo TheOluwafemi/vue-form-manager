@@ -51,7 +51,7 @@
   "author": "Your Name <your.email@example.com>",
   "license": "MIT",
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=20.0.0"
   },
   "dependencies": {
     "zod": "^4.1.12"
