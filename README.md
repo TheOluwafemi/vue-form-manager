@@ -16,12 +16,11 @@ A powerful, declarative form validation library for Vue 3 that abstracts away Zo
 - [Quick Start](#-quick-start)
 - [Field Types Guide](#-complete-field-type-guide)
 - [API Reference](#️-api-reference)
+- [TypeScript Support](#-typescript-support)
 - [Best Practices](#-best-practices)
 - [Testing](#-testing)
 - [Contributing](#-contributing)
-- [License](#-license)
-
-## ✨ Features
+- [License](#-license)## ✨ Features
 
 - **🎯 Declarative Schema Definition**: Define validation rules using simple configuration objects
 - **🔷 TypeScript Support**: Full type safety with excellent IntelliSense
@@ -86,7 +85,14 @@ const { schema, initialValues } = createSchema({
   },
 })
 
-const { form, formHasErrors, handleInput, handleBlur, validateForm } = useForm({
+const {
+  form,
+  formHasErrors,
+  handleInput,
+  handleBlur,
+  validateForm,
+  getFormData,
+} = useForm({
   schema,
   initialValues,
 })
@@ -230,6 +236,14 @@ const { schema, initialValues } = createSchema({
 
 Creates validation schema and initial values.
 
+**Parameters:**
+
+- `config: Record<string, FieldConfig>` - Field configuration object
+
+**Returns:**
+
+- `{ schema: ZodObject, initialValues: Record<string, any> }`
+
 ### `useForm({ schema, initialValues })`
 
 Returns form state and management functions:
@@ -237,24 +251,25 @@ Returns form state and management functions:
 ```typescript
 {
   // State
-  form: FormState                    // Reactive form fields
-  formError: Ref<string>             // General form error
-  isSubmitting: Ref<boolean>         // Loading state
+  form: FormState                     // Reactive form fields
+  formError: Ref<string>              // General form error
+  isSubmitting: Ref<boolean>          // Loading state
   formHasErrors: ComputedRef<boolean> // Has validation errors
   formHasChanges: ComputedRef<boolean> // Form modified
 
   // Methods
   setFieldValue: (field, value) => void
   setFieldError: (field, error) => void
-  handleInput: (field) => void       // Mark touched, clear errors
-  handleBlur: (field) => void        // Validate on blur
-  validateForm: () => boolean        // Validate entire form
-  validateField: (field) => boolean  // Validate single field
-  getFormData: () => object          // Get clean values
-  getFormErrors: () => object        // Get all errors
-  hasErrors: () => boolean           // Check validation state
-  hasChanges: () => boolean          // Check if modified
-  resetForm: () => void              // Reset to initial
+  handleInput: (field) => void        // Mark touched, clear errors
+  handleBlur: (field) => void         // Validate on blur
+  validateForm: () => boolean         // Validate entire form
+  validateField: (field) => boolean   // Validate single field
+  getFormData: () => object           // Get clean values
+  getFormErrors: () => object         // Get all current errors
+  getFormErrorsWithValidation: () => object // Get errors after validation
+  hasErrors: () => boolean            // Check validation state
+  hasChanges: () => boolean           // Check if modified
+  resetForm: () => void               // Reset to initial
 }
 ```
 
@@ -279,10 +294,37 @@ interface FieldConfig {
   maxError?: string // Max error message
   emailError?: string // Email error message
   urlError?: string // URL error message
-  values?: string[] // Enum values
+  values?: string[] // Enum values (required for enum type)
   initialValue?: any // Default value
-  schema?: FieldConfig // Nested validation
+  schema?: FieldConfig | { [key: string]: FieldConfig } // Nested validation
 }
+```
+
+## 🔷 TypeScript Support
+
+The library is fully typed with TypeScript. Import types for better development experience:
+
+```typescript
+import {
+  useForm,
+  createSchema,
+  type FieldConfig,
+  type UseFormReturn,
+} from 'vue-form-manager'
+
+// Type your schema configuration
+const schemaConfig: Record<string, FieldConfig> = {
+  username: {
+    type: 'string',
+    required: 'Username is required',
+    min: 3,
+    minError: 'Too short',
+  },
+}
+
+// Get full type inference
+const { schema, initialValues } = createSchema(schemaConfig)
+const formControls: UseFormReturn = useForm({ schema, initialValues })
 ```
 
 ## 🎯 Best Practices
@@ -294,7 +336,7 @@ interface FieldConfig {
 
 ## 🧪 Testing
 
-This library comes with comprehensive test coverage:
+This library comes with comprehensive test coverage (51 passing tests):
 
 ```bash
 # Run tests
@@ -306,6 +348,14 @@ npm run test:ui
 # Run tests once
 npm run test:run
 ```
+
+**Test Coverage:**
+
+- ✅ All field types (string, email, number, boolean, date, url, enum, array, object)
+- ✅ Validation rules (required, min/max, custom messages)
+- ✅ Form state management (touched, errors, changes)
+- ✅ Real-world integration scenarios
+- ✅ Edge cases and error handling
 
 ## 🤝 Contributing
 
