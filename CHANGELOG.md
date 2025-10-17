@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/TheOluwafemi/vue-form-manager/compare/v1.0.0...v1.1.0) (2025-10-17)
+
+
+### Features
+
+* add demo build configuration and remove demo component ([88592fb](https://github.com/TheOluwafemi/vue-form-manager/commit/88592fb338ba4aaff14459e3ad4d46d94a568217))
+
 # 1.0.0 (2025-10-17)
 
 
