@@ -63,21 +63,6 @@ jspm_packages/
 .cache
 .parcel-cache
 
-# Next.js build output
-.next
-
-# Nuxt.js build / generate output
-.nuxt
-dist
-
-# Gatsby files
-.cache/
-public
-
-# Storybook build outputs
-.out
-.storybook-out
-
 # Rollup.js default build output
 dist/
 
@@ -132,3 +117,7 @@ coverage/
 
 # Package files
 *.tgz
+
+# Docs 
+PUBLISHING_GUIDE.md
+NPM_SETUP.md

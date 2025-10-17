@@ -1,12 +1,30 @@
 {
   "name": "vue-form-manager",
   "version": "1.0.0",
-  "description": "A simple form validation and management library for Vue 3",
+  "description": "A lightweight, type-safe form validation and management library for Vue 3 with Zod schema validation",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/vue-form-manager.git"
+  },
+  "homepage": "https://github.com/yourusername/vue-form-manager#readme",
+  "bugs": {
+    "url": "https://github.com/yourusername/vue-form-manager/issues"
+  },
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
@@ -21,10 +39,20 @@
     "vue",
     "vue3",
     "form",
-    "validation"
+    "validation",
+    "zod",
+    "typescript",
+    "reactive",
+    "composition-api",
+    "form-validation",
+    "schema-validation",
+    "type-safe"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "dependencies": {
     "zod": "^4.1.12"
   },
@@ -32,11 +60,18 @@
     "vue": "^3.5.22"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^12.0.0",
+    "@semantic-release/npm": "^13.0.0",
+    "@semantic-release/release-notes-generator": "^14.1.0",
     "@types/node": "^24.7.2",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vitest/ui": "^3.2.4",
     "@vue/test-utils": "^2.4.6",
     "jsdom": "^27.0.0",
+    "semantic-release": "^25.0.0",
     "typescript": "^5.9.3",
     "vite": "^7.1.10",
     "vitest": "^3.2.4"

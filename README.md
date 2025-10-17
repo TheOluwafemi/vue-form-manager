@@ -1,6 +1,25 @@
 # Vue Form Manager 🚀
 
+[![npm version](https://badge.fury.io/js/vue-form-manager.svg)](https://badge.fury.io/js/vue-form-manager)
+[![npm downloads](https://img.shields.io/npm/dm/vue-form-manager.svg)](https://www.npmjs.com/package/vue-form-manager)
+[![GitHub license](https://img.shields.io/github/license/yourusername/vue-form-manager.svg)](https://github.com/yourusername/vue-form-manager/blob/main/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/yourusername/vue-form-manager.svg)](https://github.com/yourusername/vue-form-manager/stargazers)
+
 A powerful, declarative form validation library for Vue 3 that abstracts away Zod complexity while providing enterprise-grade validation capabilities.
+
+> **Perfect for**: Vue 3 applications that need robust form validation without the complexity of learning Zod schemas directly.
+
+## 📋 Table of Contents
+
+- [Features](#-features)
+- [Installation](#-installation)
+- [Quick Start](#-quick-start)
+- [Field Types Guide](#-complete-field-type-guide)
+- [API Reference](#️-api-reference)
+- [Best Practices](#-best-practices)
+- [Testing](#-testing)
+- [Contributing](#-contributing)
+- [License](#-license)
 
 ## ✨ Features
 
@@ -16,8 +35,20 @@ A powerful, declarative form validation library for Vue 3 that abstracts away Zo
 ## 📦 Installation
 
 ```bash
+# npm
 npm install vue-form-manager
+
+# yarn
+yarn add vue-form-manager
+
+# pnpm
+pnpm add vue-form-manager
 ```
+
+### Requirements
+
+- Vue 3.x
+- Node.js ≥ 16.0.0
 
 ## 🚀 Quick Start
 
@@ -261,6 +292,45 @@ interface FieldConfig {
 3. **TypeScript**: Type your configurations for better development experience
 4. **Form Organization**: Group related fields logically
 
+## 🧪 Testing
+
+This library comes with comprehensive test coverage:
+
+```bash
+# Run tests
+npm test
+
+# Run tests with UI
+npm run test:ui
+
+# Run tests once
+npm run test:run
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch: `git checkout -b feat/amazing-feature`
+3. Commit your changes: `git commit -m 'feat: add amazing feature'`
+4. Push to the branch: `git push origin feat/amazing-feature`
+5. Open a Pull Request
+
+### Commit Convention
+
+This project uses [Conventional Commits](https://conventionalcommits.org/):
+
+- `feat:` - New features
+- `fix:` - Bug fixes
+- `docs:` - Documentation changes
+- `style:` - Code style changes
+- `refactor:` - Code refactoring
+- `test:` - Test updates
+- `chore:` - Maintenance tasks
+
 ## 📄 License
 
-ISC License
+MIT License - see the [LICENSE](LICENSE) file for details.
+
+## ⭐ Show Your Support
+
+If this project helped you, please consider giving it a ⭐ on [GitHub](https://github.com/yourusername/vue-form-manager)!
