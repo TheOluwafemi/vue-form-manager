@@ -12,7 +12,7 @@
     "dev": "tsc --watch",
     "preview": "vite",
     "preview:build": "vite build",
-    "examples": "open demo/standalone-example.html",
+    "examples": "open src/demo/standalone-example.html",
     "test": "vitest",
     "test:run": "vitest run",
     "test:ui": "vitest --ui"

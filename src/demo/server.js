@@ -9,7 +9,7 @@ const app = express()
 const PORT = 3000
 
 // Serve static files
-app.use(express.static(path.join(__dirname, '..')))
+app.use(express.static(path.join(__dirname, '../..')))
 
 // Route for the standalone example
 app.get('/', (req, res) => {
