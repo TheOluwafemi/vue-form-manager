@@ -1,7 +1,14 @@
 <template>
   <div class="container">
     <div class="header">
-      <h1>🚀 Vue Form Manager Examples</h1>
+      <div>
+        <img
+          src="../../logo.svg"
+          alt="Vue Form Manager Logo"
+          width="50" />
+        <h1>Vue Form Manager Examples</h1>
+      </div>
+
       <p>Interactive examples showing all the features of Vue Form Manager</p>
     </div>
 
@@ -22,8 +29,8 @@
 </template>
 
 <script setup lang="ts">
-import BasicUsage from './components/BasicUsage.vue';
-import ComprehensiveExample from './components/ComprehensiveExample.vue';
+import BasicUsage from './components/BasicUsage.vue'
+import ComprehensiveExample from './components/ComprehensiveExample.vue'
 </script>
 
 <style scoped>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title>vue-form-manager logo</title>
+  <desc>Rounded square with two form lines and a green checkmark with dark outline.</desc>
+
+  <!-- Colors -->
+  <!-- Dark navy for outline and UI lines -->
+  <!-- Teal/green for the check body -->
+  <defs>
+    <style>
+      .dark { fill: #1E3A5F; }
+      .stroke-dark { stroke: #1E3A5F; }
+      .green { stroke: #2FAE8F; }
+    </style>
+  </defs>
+
+  <!-- White tile with dark rounded outline -->
+  <rect x="24" y="24" width="208" height="208" rx="36" fill="#FFFFFF" />
+  <rect x="24" y="24" width="208" height="208" rx="36"
+        fill="none" stroke="#1E3A5F" stroke-width="16" />
+
+  <!-- Optional small corner breaks (to echo the reference look) -->
+  <!-- These white circles sit on top of the border to create subtle gaps -->
+  <circle cx="222" cy="42" r="10" fill="#FFFFFF"/>
+  <circle cx="222" cy="214" r="10" fill="#FFFFFF"/>
+
+  <!-- Form lines -->
+  <rect x="70" y="78" width="84" height="14" rx="7" class="dark"/>
+  <rect x="70" y="110" width="40" height="14" rx="7" class="dark"/>
+
+  <!-- Checkmark: navy outline beneath, green body above -->
+  <!-- Outline -->
+  <path d="M106 144 L142 180 L206 116"
+        fill="none"
+        class="stroke-dark"
+        stroke-width="36"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <!-- Body -->
+  <path d="M106 144 L142 180 L206 116"
+        fill="none"
+        class="green"
+        stroke-width="24"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+</svg>
