@@ -1,6 +1,6 @@
 {
   "name": "vue-form-manager",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A lightweight, type-safe form validation and management library for Vue 3 with Zod schema validation",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
