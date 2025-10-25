@@ -198,6 +198,8 @@ const handleSubmit = async () => {
 
 <style scoped>
 .form-container {
+  font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', sans-serif;
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
@@ -217,12 +219,15 @@ label {
 
 input,
 select {
-  width: 100%;
-  padding: 8px 12px;
-  border: 2px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
   transition: border-color 0.2s;
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  background-color: #fff;
 }
 
 input:focus,
@@ -251,26 +256,33 @@ select.error {
 
 .submit-btn,
 .reset-btn {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
   transition: background-color 0.2s;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 50px;
 }
 
 .submit-btn {
-  background-color: #007bff;
+  background: linear-gradient(135deg, #27ae60, #229954);
   color: white;
 }
 
 .submit-btn:disabled {
-  background-color: #6c757d;
+  background-color: #bdc3c7;
   cursor: not-allowed;
 }
 
 .reset-btn {
-  background-color: #6c757d;
+  background-color: #95a5a6;
   color: white;
 }
 
