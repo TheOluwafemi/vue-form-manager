@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/TheOluwafemi/vue-form-manager/compare/v1.2.0...v1.3.0) (2025-10-25)
+
+
+### Features
+
+* **security:** resolve security audit issues and update dependencies ([7cc1f34](https://github.com/TheOluwafemi/vue-form-manager/commit/7cc1f34e3eeb3a86acdb8688cdd0da0ea5b03939))
+
 # [1.2.0](https://github.com/TheOluwafemi/vue-form-manager/compare/v1.1.0...v1.2.0) (2025-10-25)
 
 
