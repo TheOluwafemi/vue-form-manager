@@ -35,7 +35,7 @@ describe('Type System', () => {
 
       const schema = buildZodSchema(config)
 
-      expect(schema.safeParse('test@example.com').success).toBe(true)
+      expect(schema.safeParse('test@test.local').success).toBe(true)
       expect(schema.safeParse('invalid-email').success).toBe(false)
     })
 

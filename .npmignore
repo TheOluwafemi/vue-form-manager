@@ -1,0 +1,23 @@
+# NPM Ignore - Exclude files from package audit
+*.log
+*.tgz
+.DS_Store
+node_modules/
+coverage/
+.nyc_output/
+.vscode/
+.idea/
+
+# Exclude demo build (contains Vue runtime with eval)
+dist-demo/
+src/demo/
+
+# Development files
+src/tests/
+vitest.config.js
+vite.config.ts
+vite.demo.config.ts
+tsconfig.json
+
+# CI/CD files
+.github/

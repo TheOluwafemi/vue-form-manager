@@ -45,7 +45,7 @@ describe('createSchema', () => {
     const result = schema.safeParse({ email: 'invalid-email' })
     expect(result.success).toBe(false)
 
-    const validResult = schema.safeParse({ email: 'test@example.com' })
+    const validResult = schema.safeParse({ email: 'test@test.local' })
     expect(validResult.success).toBe(true)
   })
 
@@ -167,7 +167,7 @@ describe('createSchema', () => {
     // Test valid data
     const validData = {
       name: 'John',
-      email: 'john@example.com',
+      email: 'john@test.local',
       age: 25,
       role: 'user',
       active: true,

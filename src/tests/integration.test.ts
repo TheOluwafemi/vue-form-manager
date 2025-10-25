@@ -60,7 +60,7 @@ describe('Integration Tests', () => {
 
     // 4. Fill out form with valid data
     setFieldValue('username', 'john_doe')
-    setFieldValue('email', 'john@example.com')
+    setFieldValue('email', 'john@test.local')
     setFieldValue('age', 25)
     setFieldValue('role', 'user')
     setFieldValue('terms', true)
@@ -77,7 +77,7 @@ describe('Integration Tests', () => {
     const formData = getFormData()
     expect(formData).toEqual({
       username: 'john_doe',
-      email: 'john@example.com',
+      email: 'john@test.local',
       age: 25,
       role: 'user',
       terms: true,
@@ -158,7 +158,7 @@ describe('Integration Tests', () => {
     const validData = {
       user: {
         name: 'John',
-        email: 'john@example.com',
+        email: 'john@test.local',
       },
     }
 
@@ -233,12 +233,12 @@ describe('Integration Tests', () => {
     // Simulate user filling out the form
     form.setFieldValue('firstName', 'John')
     form.setFieldValue('lastName', 'Doe')
-    form.setFieldValue('email', 'john.doe@example.com')
+    form.setFieldValue('email', 'john.doe@test.local')
     form.setFieldValue('password', 'securepassword123')
     form.setFieldValue('age', 30)
     form.setFieldValue('country', 'US')
     form.setFieldValue('newsletter', true)
-    form.setFieldValue('website', 'https://johndoe.com')
+    form.setFieldValue('website', 'https://johndoe.test')
 
     // Validate the form
     const isValid = form.validateForm()
@@ -249,12 +249,12 @@ describe('Integration Tests', () => {
     expect(submissionData).toEqual({
       firstName: 'John',
       lastName: 'Doe',
-      email: 'john.doe@example.com',
+      email: 'john.doe@test.local',
       password: 'securepassword123',
       age: 30,
       country: 'US',
       newsletter: true,
-      website: 'https://johndoe.com',
+      website: 'https://johndoe.test',
     })
   })
 })

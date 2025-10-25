@@ -60,14 +60,14 @@ describe('useForm', () => {
     it('should initialize with custom initial values', () => {
       const customInitialValues = {
         name: 'John Doe',
-        email: 'john@example.com',
+        email: 'john@test.local',
         age: 30,
       }
 
       const formHook = useForm({ schema, initialValues: customInitialValues })
 
       expect(formHook.form.name.value).toBe('John Doe')
-      expect(formHook.form.email.value).toBe('john@example.com')
+      expect(formHook.form.email.value).toBe('john@test.local')
       expect(formHook.form.age.value).toBe(30)
     })
   })

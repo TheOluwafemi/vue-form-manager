@@ -72,7 +72,7 @@
               error: form.email.error,
               success: form.email.touched && !form.email.error,
             }"
-            placeholder="your.email@example.com" />
+            placeholder="your.email@test.local" />
           <div class="field-feedback">
             <span
               v-if="form.email.error"
@@ -196,7 +196,7 @@
                 form.portfolio.value &&
                 !form.portfolio.error,
             }"
-            placeholder="https://your-portfolio.com" />
+            placeholder="https://your-portfolio.test" />
           <div class="field-feedback">
             <span
               v-if="form.portfolio.error"
@@ -566,7 +566,7 @@ const schemaConfig: Record<string, FieldConfig> = {
   // URL validation (optional)
   portfolio: {
     type: 'url',
-    urlError: 'Please enter a valid URL (e.g., https://example.com)',
+    urlError: 'Please enter a valid URL (e.g., https://demo.test)',
   },
 
   // Nested object validation
@@ -725,11 +725,11 @@ const validateAddressField = (field: string) => {
 const fillSampleData = () => {
   // Fill all the form fields with sample data
   setFieldValue('fullName', 'Jane Developer')
-  setFieldValue('email', 'jane.developer@example.com')
+  setFieldValue('email', 'jane.developer@test.local')
   setFieldValue('age', 28)
   setFieldValue('birthDate', '1995-06-15')
   setFieldValue('role', 'fullstack-developer')
-  setFieldValue('portfolio', 'https://jane-dev.portfolio.com')
+  setFieldValue('portfolio', 'https://jane-dev.portfolio.test')
 
   setFieldValue('address', {
     street: '123 Tech Street, Suite 100',
@@ -824,8 +824,8 @@ if (typeof window !== 'undefined') {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    sans-serif;
+  font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', sans-serif;
   line-height: 1.6;
   color: #333;
 }
