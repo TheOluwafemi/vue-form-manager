@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/TheOluwafemi/vue-form-manager/compare/v1.1.0...v1.2.0) (2025-10-25)
+
+
+### Features
+
+* add logo to header in App.vue and update icon reference in index.html ([ff610a5](https://github.com/TheOluwafemi/vue-form-manager/commit/ff610a538f185f62574e612ed467275d244487e8))
+* update font family to 'Work Sans' and enhance styling in demo components ([a3613dc](https://github.com/TheOluwafemi/vue-form-manager/commit/a3613dc2fdd27cb2bc267fd3486be9fca2ab7637))
+
 # [1.1.0](https://github.com/TheOluwafemi/vue-form-manager/compare/v1.0.0...v1.1.0) (2025-10-17)
 
 
