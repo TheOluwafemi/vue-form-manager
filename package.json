@@ -50,7 +50,7 @@
     "schema-validation",
     "type-safe"
   ],
-  "author": "Your Name <your.email@example.com>",
+  "author": "Damilola Oluwafemi <oluwafemidamilola21@gmail.com>",
   "license": "MIT",
   "engines": {
     "node": ">=20.0.0"

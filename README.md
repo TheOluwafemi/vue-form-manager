@@ -18,7 +18,6 @@ A simple, powerful form validation library for Vue 3 that makes form handling ef
 - [API Reference](#️-api-reference)
 - [TypeScript Support](#-typescript-support)
 - [Best Practices](#-best-practices)
-- [Testing](#-testing)
 - [Contributing](#-contributing)
 - [License](#-license)
 
