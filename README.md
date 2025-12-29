@@ -9,7 +9,7 @@ A simple, powerful form validation library for Vue 3 that makes form handling ef
 
 > **Perfect for**: Vue 3 applications that need robust form validation without the complexity of learning Zod schemas directly.
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Features](#-features)
 - [Installation](#-installation)
@@ -23,17 +23,17 @@ A simple, powerful form validation library for Vue 3 that makes form handling ef
 
 ## ✨ Features
 
-- **🎯 Declarative Schema Definition**: Define validation rules using simple configuration objects
-- **🔷 TypeScript Support**: Full type safety with excellent IntelliSense
-- **⚛️ Vue 3 Native**: Built with Composition API for seamless integration
-- **🚫 Zero Zod Knowledge Required**: Abstract away complex Zod syntax
-- **🔄 Reactive State Management**: Real-time form state with Vue's reactivity
-- **📋 Comprehensive Field Types**: Support for all common form field types
-- **✅ Flexible Validation**: Field-level and form-level validation with custom messages
-- **🏭 Production Ready**: Robust error handling and edge case management
-- **⚡ Lightweight**: Powered by Zod under the hood for reliable validation
+- ** Declarative Schema Definition**: Define validation rules using simple configuration objects
+- ** TypeScript Support**: Full type safety with excellent IntelliSense
+- ** Vue 3 Native**: Built with Composition API for seamless integration
+- ** Zero Zod Knowledge Required**: Abstract away complex Zod syntax
+- ** Reactive State Management**: Real-time form state with Vue's reactivity
+- ** Comprehensive Field Types**: Support for all common form field types
+- ** Flexible Validation**: Field-level and form-level validation with custom messages
+- ** Production Ready**: Robust error handling and edge case management
+- ** Lightweight**: Powered by Zod under the hood for reliable validation
 
-## 📦 Installation
+## Installation
 
 ```bash
 # npm
@@ -51,7 +51,7 @@ pnpm add vue-form-manager
 - Vue 3.x
 - Node.js ≥ 20.0.0
 
-## 🚀 Quick Start
+## Quick Start
 
 ```vue
 <template>
@@ -107,9 +107,9 @@ const handleSubmit = () => {
 </script>
 ```
 
-## 📚 Complete Field Type Guide
+## Complete Field Type Guide
 
-### 🔤 String Fields
+### String Fields
 
 ```typescript
 const { schema, initialValues } = createSchema({
@@ -124,7 +124,7 @@ const { schema, initialValues } = createSchema({
 })
 ```
 
-### 📧 Email Fields
+### Email Fields
 
 ```typescript
 const { schema, initialValues } = createSchema({
@@ -136,7 +136,7 @@ const { schema, initialValues } = createSchema({
 })
 ```
 
-### 🔢 Number Fields
+### Number Fields
 
 ```typescript
 const { schema, initialValues } = createSchema({
@@ -148,7 +148,7 @@ const { schema, initialValues } = createSchema({
 })
 ```
 
-### 🌐 URL Fields
+### URL Fields
 
 ```typescript
 const { schema, initialValues } = createSchema({
@@ -160,7 +160,7 @@ const { schema, initialValues } = createSchema({
 })
 ```
 
-### 📅 Date Fields
+### Date Fields
 
 ```typescript
 const { schema, initialValues } = createSchema({
@@ -172,7 +172,7 @@ const { schema, initialValues } = createSchema({
 })
 ```
 
-### ✅ Boolean Fields
+### Boolean Fields
 
 ```typescript
 const { schema, initialValues } = createSchema({
@@ -184,7 +184,7 @@ const { schema, initialValues } = createSchema({
 })
 ```
 
-### 📋 Enum Fields (Select/Dropdown)
+### Enum Fields (Select/Dropdown)
 
 ```typescript
 const { schema, initialValues } = createSchema({
@@ -196,7 +196,7 @@ const { schema, initialValues } = createSchema({
 })
 ```
 
-### 📦 Array Fields
+### Array Fields
 
 ```typescript
 const { schema, initialValues } = createSchema({
@@ -232,7 +232,7 @@ const { schema, initialValues } = createSchema({
 })
 ```
 
-## 🛠️ API Reference
+## API Reference
 
 ### `createSchema(config)`
 
@@ -275,7 +275,7 @@ Returns form state and management functions:
 }
 ```
 
-## 📝 Field Configuration
+## Field Configuration
 
 ```typescript
 interface FieldConfig {
@@ -302,7 +302,7 @@ interface FieldConfig {
 }
 ```
 
-## 🔷 TypeScript Support
+## TypeScript Support
 
 The library is fully typed with TypeScript. Import types for better development experience:
 
@@ -329,14 +329,14 @@ const { schema, initialValues } = createSchema(schemaConfig)
 const formControls: UseFormReturn = useForm({ schema, initialValues })
 ```
 
-## 🎯 Best Practices
+## Best Practices
 
 1. **Consistent Error Messages**: Use clear, user-friendly validation messages
 2. **Validation Timing**: Use `@blur` for validation, `@input` for clearing errors
 3. **TypeScript**: Type your configurations for better development experience
 4. **Form Organization**: Group related fields logically
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create your feature branch: `git checkout -b feat/amazing-feature`
@@ -356,10 +356,10 @@ This project uses [Conventional Commits](https://conventionalcommits.org/):
 - `test:` - Test updates
 - `chore:` - Maintenance tasks
 
-## 📄 License
+## License
 
 MIT License - see the [LICENSE](LICENSE) file for details.
 
-## ⭐ Show Your Support
+## Show Your Support
 
 If this project helped you, please consider giving it a ⭐ on [GitHub](https://github.com/TheOluwafemi/vue-form-manager)!
