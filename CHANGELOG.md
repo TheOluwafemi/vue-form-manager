@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/TheOluwafemi/vue-form-manager/compare/v1.3.0...v1.3.1) (2025-12-29)
+
+
+### Bug Fixes
+
+* update documentation ([b30e7c9](https://github.com/TheOluwafemi/vue-form-manager/commit/b30e7c9e0cf643243b0a68b3cc8050c839cab9f2))
+
 # [1.3.0](https://github.com/TheOluwafemi/vue-form-manager/compare/v1.2.0...v1.3.0) (2025-10-25)
 
 
